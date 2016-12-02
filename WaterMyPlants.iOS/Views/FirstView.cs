@@ -3,7 +3,7 @@ using MvvmCross.iOS.Views;
 
 namespace WaterMyPlants.iOS.Views
 {
-    public partial class FirstView : MvxViewController
+    public partial class FirstView : BaseView
     {
         public FirstView() : base("FirstView", null)
         {

@@ -1,16 +1,10 @@
 using Android.App;
-using Android.OS;
-using MvvmCross.Droid.Views;
 
 namespace WaterMyPlants.Droid.Views
 {
     [Activity(Label = "View for FirstViewModel")]
-    public class FirstView : MvxActivity
+    public class FirstView : BaseActivity
     {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            SetContentView(Resource.Layout.FirstView);
-        }
+        protected override int ResourceId => Resource.Layout.FirstView;
     }
 }
