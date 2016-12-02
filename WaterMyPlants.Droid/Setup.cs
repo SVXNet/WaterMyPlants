@@ -1,6 +1,8 @@
 using Android.Content;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Localization;
+using MvvmCross.Platform.Converters;
 using MvvmCross.Platform.Platform;
 
 namespace WaterMyPlants.Droid
@@ -19,6 +21,12 @@ namespace WaterMyPlants.Droid
         protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
+        }
+
+        protected override void FillValueConverters(IMvxValueConverterRegistry registry)
+        {
+            base.FillValueConverters(registry);
+            registry.AddOrOverwrite("Language", new MvxLanguageConverter());
         }
     }
 }

@@ -1,4 +1,7 @@
+using MvvmCross.Localization;
+using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
+using WaterMyPlants.Core.Localization;
 
 namespace WaterMyPlants.Core
 {
@@ -10,6 +13,8 @@ namespace WaterMyPlants.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+            Mvx.RegisterSingleton<IMvxTextProvider>(new MvxResxTextProvider(AppStrings.ResourceManager));
 
             RegisterAppStart<ViewModels.FirstViewModel>();
         }

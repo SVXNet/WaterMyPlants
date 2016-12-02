@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Localization;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 
@@ -12,7 +13,7 @@ namespace WaterMyPlants.Core.ViewModels.LifeCycle
     /// <summary>
     /// This base view model should be standard with no app specific code (so it can be easily shared with other projects)
     /// </summary>
-    public abstract class BaseLifeCycleViewModel : MvxViewModel, ILifeCycle
+    public abstract class BaseLifeCycleViewModel : MvxViewModel, ILifeCycle, IMvxLocalizedTextSourceOwner
     {
         private const string LogTag = nameof(BaseLifeCycleViewModel);
 
@@ -134,5 +135,11 @@ namespace WaterMyPlants.Core.ViewModels.LifeCycle
 
         #endregion
 
+        #region Localization
+
+        public IMvxLanguageBinder TextSource => new MvxLanguageBinder(string.Empty, GetType().Name);
+        public IMvxLanguageBinder LocalizedTextSource => TextSource;
+
+        #endregion
     }
 }

@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <TextBox Text="{Binding Hello, Mode=TwoWay}" />
+            <TextBox Header="{Binding Path=AppStrings.FirstView_EnterTextHeader, Source={StaticResource AppStrings}}" Text="{Binding Hello, Mode=TwoWay}" />
             <TextBlock Text="{Binding Hello}" />
         </StackPanel>
     </Grid>
